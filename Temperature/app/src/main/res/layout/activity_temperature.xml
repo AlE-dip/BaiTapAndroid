@@ -1,0 +1,139 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/dnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:text="Đổi nhiệt độ">
+    </TextView>
+    <EditText
+        android:id="@+id/textctof"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/dnd"
+        android:layout_marginTop="50sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10sp"
+        android:inputType="numberSigned|numberDecimal"
+        android:hint="Đổi độ C ra độ F"
+        android:lines="1">
+    </EditText>
+    <ImageView
+        android:id="@+id/iconhinh"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_gravity="center"
+        android:src="@drawable/loop"
+        app:layout_constraintBottom_toTopOf="@+id/textftoc"
+        app:layout_constraintTop_toBottomOf="@+id/textctof"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+    </ImageView>
+
+    <Button
+        android:id="@+id/changeC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintLeft_toRightOf="@id/textctof"
+        app:layout_constraintTop_toTopOf="@+id/textctof"
+        app:layout_constraintBottom_toBottomOf="@+id/textctof"
+        android:padding="10px"
+        android:text="C to F"></Button>
+
+    <EditText
+        android:id="@+id/textftoc"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textctof"
+        app:layout_constraintLeft_toLeftOf="@+id/textctof"
+        android:layout_marginTop="50sp"
+        android:inputType="numberSigned|numberDecimal"
+        android:hint="Đổi độ F ra độ C"
+        android:lines="1">
+    </EditText>
+    <Button
+        android:id="@+id/changeF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintLeft_toRightOf="@+id/textftoc"
+        app:layout_constraintBottom_toBottomOf="@id/textftoc"
+        app:layout_constraintTop_toTopOf="@+id/textftoc"
+        android:padding="10px"
+        android:text="F to C">
+    </Button>
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textftoc"
+        android:text="Reset">
+    </Button>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_marginTop="320dp"
+        android:layout_marginRight="130dp"
+        app:layout_constraintTop_toBottomOf="@id/reset"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lịch sử đổi : \n">
+            </TextView>
+
+            <TextView
+                android:id="@+id/Kq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintTop_toBottomOf="@id/temp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="left"
+                android:textSize="20dp">
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reset"
+        android:text="Clear"
+        android:layout_marginRight="20dp">
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
